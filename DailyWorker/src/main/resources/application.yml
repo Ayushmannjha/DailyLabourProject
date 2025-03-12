@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/daily_worker
-    username: root
-    password: root
+    username: kamkendra
+    password: myKam
     driver-class-name: com.mysql.cj.jdbc.Driver
     
     
