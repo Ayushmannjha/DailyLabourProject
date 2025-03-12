@@ -10,7 +10,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import com.dailyWorker.entities.Admin;
+import com.dailyWorker.entities.ApplicationStatus;
+import com.dailyWorker.entities.JobNotification;
 import com.dailyWorker.entities.LoginCredential;
+import com.dailyWorker.entities.ReadNotification;
+import com.dailyWorker.entities.Request;
 import com.dailyWorker.entities.WebUser;
 import com.dailyWorker.entities.Workers;
 import com.dailyWorker.entities.Workes;
@@ -24,6 +28,21 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TokenHelper {
 
+	public String genrateTokenForWorkSearch(List<Workes> result){
+		Map<String, Object> claims = new HashMap<>();
+		claims.put("result", result);
+		return doGenerateToken(claims, secret);
+	}
+	
+	
+	public String genrateTokenForNotification(List<JobNotification> jobNotifications, List<Request> requestNotification, List<Integer> userIds,List<ReadNotification> readNotification) {
+		Map<String, Object> claims = new HashMap<>();
+		claims.put("jobNotifications", jobNotifications);
+		claims.put("requestNotification", requestNotification);
+		claims.put("readNotification", readNotification);
+		claims.put("userIds", userIds);
+		return doGenerateToken(claims, secret);
+	}
 
 	public String genrateTokenforNearestWork(List<Workes> workes) {
 		Map<String, Object> claims = new HashMap<>();
@@ -31,7 +50,25 @@ public class TokenHelper {
 		return doGenerateToken(claims, secret);
 	}
 	
+	public String genrateTokenForApplicationStatusList(List<ApplicationStatus> workerWorkes,List<Workes> workes) {
+		Map<String,Object> claims = new HashMap<>();
+		claims.put("workes", workes);
+		claims.put("workerWorkes", workerWorkes);
+		return doGenerateToken(claims, secret);
+	}
 	
+	public String genrateTokenForHighestPayingjobs(List<Workes> workes) {
+		Map<String,Object> claims = new HashMap<>();
+		claims.put("workes", workes);
+		
+		return doGenerateToken(claims, secret);
+	}
+	public String genrateTokenForApplicationStatus(List<ApplicationStatus> workerWorkes,ApplicationStatus applicationStatus) {
+		Map<String,Object> claims = new HashMap<>();
+		claims.put("applicationStatus", applicationStatus);
+		claims.put("workerWorkes", workerWorkes);
+		return doGenerateToken(claims, secret);
+	}
 	
     public String generateToken(LoginCredential loginCredential, Workers worker) {
         Map<String, Object> claims = new HashMap<>();

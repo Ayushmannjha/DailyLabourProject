@@ -25,4 +25,11 @@ private String laboursDetails;
 private String description;
 private double budget;
 private int userId;
+@Override
+public String toString() {
+	return "Workes [id=" + id + ", city=" + city + ", state=" + state + ", pincode=" + pincode + ", phone=" + phone
+			+ ", ownerName=" + ownerName + ", laboursDetails=" + laboursDetails + ", description=" + description
+			+ ", budget=" + budget + ", userId=" + userId + "]";
+}
+
 }

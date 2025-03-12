@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dailyWorker.entities.JobNotification;
 import com.dailyWorker.entities.LoginCredential;
+import com.dailyWorker.entities.ReadNotification;
 import com.dailyWorker.entities.WebUser;
 import com.dailyWorker.entities.Workers;
 import com.dailyWorker.entities.Workes;
@@ -118,6 +120,7 @@ public ResponseEntity<Object> uploadWork(@RequestBody Map<String, Object> reques
 try {
 	System.out.println(request);
 	WebUser wbUser = wsr.getByUserId(id);
+	
 	Workes work = new Workes();
 	work.setUserId(id);
 	work.setOwnerName(wbUser.getName());
@@ -128,7 +131,24 @@ try {
 	work.setPincode(request.get("pincode").toString());
 	work.setPhone(wbUser.getPhone());
 	work.setDescription(request.get("description").toString());
+	
+	
 	wsr.saveWorkes(work);
+	
+	
+	JobNotification newJob = new JobNotification();
+	newJob.setTitle("New Job Update");
+	newJob.setMsg(work.getCity());
+	wsr.saveJobNotification(newJob);
+	List<Workers> workers = wsr.getWorkerByCity(work.getCity());
+	for(Workers worker:workers) {
+		ReadNotification readNotification = new ReadNotification();
+		readNotification.setIsRead(0);
+		readNotification.setJobNotificationId(newJob.getId());
+		readNotification.setWorkerId(worker.getId());
+		wsr.saveReadNotification(readNotification);
+	}
+	
 	return new ResponseEntity<>("Workes uploaded",HttpStatus.OK);
 } catch (Exception e) {
 	log.error("Error occured",e);

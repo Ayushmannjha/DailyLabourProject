@@ -12,11 +12,18 @@ import java.util.Optional;
 public interface WorkesRepo extends JpaRepository<Workes, Integer>{
 List<Workes> findByCity(String city);
 
+List<Workes> findByLaboursDetailsContaining(String labourDetail);
+
+List<Workes> findByLaboursDetailsContainingAndAndCity(String laboursDetails, String city);
+
 Workes save(Workes workes);
 
 List<Workes> findAll();
 
 Workes findById(int id);
+
+List<Workes> findAllByOrderByBudgetDesc();
+
 
 
 }

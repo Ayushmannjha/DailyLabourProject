@@ -15,5 +15,5 @@ List<Workers> findByCityAndRole(String city, String role);
 Workers findByEmail(String email);
 List<Workers> findAll();
 List<Workers> findByCity(String city);
-
+Workers findByPhone(String phone);
 }

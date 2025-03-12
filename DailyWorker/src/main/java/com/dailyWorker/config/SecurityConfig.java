@@ -30,6 +30,7 @@ public class SecurityConfig {
 	            		 .requestMatchers("/auth/register-user").permitAll() // Allow unauthenticated access to registration endpoint
 	            		 .requestMatchers("/auth/register-admin").permitAll()
 	            		 .requestMatchers("/auth/register-worker").permitAll()
+	            		 .requestMatchers("/auth/check-existing-worker").permitAll()
 	            		 .requestMatchers("/auth/login").permitAll() // Allow unauthenticated access to login endpoint
 	                     .requestMatchers("/admin/**").hasRole("ADMIN") // Restrict access to admin routes to ADMIN role
 	                     .requestMatchers("/user/**").hasRole("USER")

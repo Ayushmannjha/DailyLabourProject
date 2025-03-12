@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DailyWorkerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DailyWorkerApplication.class, args);
+		SpringApplication.run(com.dailyWorker.DailyWorkerApplication.class, args);
 	}
 
 }

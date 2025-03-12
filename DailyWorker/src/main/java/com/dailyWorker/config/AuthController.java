@@ -10,9 +10,11 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dailyWorker.dao.ErrorResponse;
@@ -79,7 +81,17 @@ public class AuthController {
             return new ResponseEntity<>("Registration failed", HttpStatus.OK);
         }
     }
-
+    @PostMapping("/check-existing-worker")
+    public ResponseEntity<Object> checkExistingWorker( @RequestParam String phone){
+    	 try {
+    	        Workers worker = workerService.getWorkerByPhone(phone);
+    	        boolean exists = (worker == null);
+    	        return ResponseEntity.ok(exists);
+    	    } catch (Exception e) {
+    	        e.printStackTrace();
+    	        return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(null);
+    	    }
+    }
     
     
     
