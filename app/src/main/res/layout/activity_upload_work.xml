@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#FF5722"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".userPanel.UploadWork">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
+
+
+        <View
+            android:id="@+id/textView2"
+            android:layout_width="331dp"
+            android:layout_height="456dp"
+            android:background="@drawable/upload_work_background"
+            android:fontFamily="@font/adlam_displa"
+            android:gravity="center"
+
+            android:text="Address of your work"
+            android:textColor="#FFFFFF"
+            android:textColorLink="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.446" />
+
+        <EditText
+            android:id="@+id/workState"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:background="@drawable/login_button_background"
+            android:ems="10"
+            android:hint="state"
+            android:visibility="gone"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="#6F6464"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.309" />
+
+        <EditText
+            android:id="@+id/workCity"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:background="@drawable/login_button_background"
+            android:ems="10"
+            android:hint="city"
+            android:visibility="gone"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="#6F6464"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.367" />
+
+        <EditText
+            android:id="@+id/worrkPincode"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:background="@drawable/login_button_background"
+            android:ems="10"
+            android:hint="Pincode"
+            android:visibility="gone"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textColorHint="#6F6464"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.424" />
+
+        <TextView
+            android:id="@+id/workNext"
+            android:layout_width="94dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_background_rounded"
+            android:gravity="center"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textColorHint="#000000"
+            android:textSize="20dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.189"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/workNext2"
+            android:layout_width="94dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_background_rounded"
+            android:gravity="center"
+            android:text="Next"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textColorHint="#000000"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.189"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="290dp"
+            android:layout_height="157dp"
+            android:background="@drawable/login_button_background"
+            android:gravity="top|start"
+            android:hint="Description of work:- number of workers + full address . \n Example = I need five workers at kankarbagh road no 14 \n phone = 89912388761"
+            android:inputType="textMultiLine"
+            android:maxLines="6"
+            android:minLines="4"
+            android:visibility="gone"
+            android:scrollbars="vertical"
+            android:textColor="@color/black"
+            android:textColorHint="#6F6464"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.557" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:text="Adress of your work"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Work"
+            android:drawableStart="@drawable/upload_icon"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:drawablePadding="15dp"
+            android:textColor="#FF3D00"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/login_button_background"
+            android:ems="10"
+            android:visibility="gone"
+            android:clickable="true"
+            android:focusable="true"
+            android:inputType="text"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="select labour type     >"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.16000003" />
+
+        <EditText
+            android:id="@+id/quantity"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@drawable/login_button_background"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="quantity"
+            android:visibility="gone"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/type"
+            app:layout_constraintStart_toEndOf="@+id/type"
+            app:layout_constraintTop_toTopOf="@+id/type" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listOfRequirements"
+            android:layout_width="0dp"
+            android:layout_height="195dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.464"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView44"
+            app:layout_constraintVertical_bias="0.714" />
+
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_button_background"
+            android:drawableStart="@drawable/person_add"
+            android:text="Add"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/listOfRequirements"
+            app:layout_constraintEnd_toEndOf="@+id/type"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/type"
+            app:layout_constraintTop_toBottomOf="@+id/type" />
+
+        <EditText
+            android:id="@+id/budget"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/login_button_background"
+            android:drawableStart="@drawable/rupee_icon"
+            android:ems="10"
+            android:visibility="gone"
+            android:hint="Write your budget "
+            android:inputType="number"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.18" />
+
+        <TextView
+            android:id="@+id/finish"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_background_rounded"
+            android:text="Finish"
+           android:gravity="center"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/budget"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/budget"
+            app:layout_constraintTop_toBottomOf="@+id/budget" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="Your Work is uploaded successfully"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#006F38"
+            android:background="@drawable/login_button_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+        <ImageView
+            android:id="@+id/imageView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/textView42"
+            app:layout_constraintEnd_toEndOf="@+id/textView42"
+            app:layout_constraintHorizontal_bias="0.04"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/textView42"
+            app:layout_constraintTop_toTopOf="@+id/textView42"
+            app:srcCompat="@android:drawable/checkbox_on_background" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

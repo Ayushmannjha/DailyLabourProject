@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "19904444981",
+    "project_id": "kamkendra-f60f5",
+    "storage_bucket": "kamkendra-f60f5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19904444981:android:739f27e27e6ecdb9e28f7c",
+        "android_client_info": {
+          "package_name": "com.example.kamkendra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI5sIUtIiT2-qDr5St8oTKU7cIUsj_Cho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

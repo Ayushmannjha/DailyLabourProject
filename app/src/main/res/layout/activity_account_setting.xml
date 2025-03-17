@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#EFEFEF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".workerPanel.AccountSetting">
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:text="Phone"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:focusable="false"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.253" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:focusable="false"
+        android:clickable="false"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:text="User Name"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:focusable="false"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile details"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <EditText
+        android:id="@+id/state"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:text="State"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:focusable="false"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.334" />
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:text="City"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:focusable="false"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
+
+
+    <EditText
+        android:id="@+id/workPlaces"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+
+        android:text="Workplaces"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:focusable="false"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <EditText
+        android:id="@+id/roles"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+
+        android:text="Roles"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:focusable="false"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+    <EditText
+        android:id="@+id/locality"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:text="Locality"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.691" />
+
+    <TextView
+        android:id="@+id/editLocality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textSize="12sp"
+        android:textColor="@color/blue"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/locality"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/locality"
+        app:layout_constraintTop_toTopOf="@+id/locality" />
+
+    <TextView
+        android:id="@+id/saveLocality"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:text="Save"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="#00E676"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editLocality"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editLocality"
+        app:layout_constraintTop_toTopOf="@+id/editLocality" />
+
+
+    <TextView
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textSize="12sp"
+        android:textColor="@color/blue"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/saveName"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:text="Save"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="#00E676"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editName"
+        app:layout_constraintTop_toTopOf="@+id/editName" />
+
+
+    <TextView
+        android:id="@+id/editState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/state"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/state"
+        app:layout_constraintTop_toTopOf="@+id/state" />
+
+    <TextView
+        android:id="@+id/saveState"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:text="Save"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#00E676"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editState"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editState"
+        app:layout_constraintTop_toTopOf="@+id/editState" />
+
+    <TextView
+        android:id="@+id/editCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/city"
+        app:layout_constraintTop_toTopOf="@+id/city" />
+
+    <TextView
+        android:id="@+id/saveCity"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:text="Save"
+
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="#00E676"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editCity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editCity"
+        app:layout_constraintTop_toTopOf="@+id/editCity" />
+
+    <TextView
+        android:id="@+id/editWorkplaces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textSize="12sp"
+        android:textColor="@color/blue"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/workPlaces"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/workPlaces"
+        app:layout_constraintTop_toTopOf="@+id/workPlaces" />
+
+    <TextView
+        android:id="@+id/saveWorkplaces"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:text="Save"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:background="#00E676"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/editWorkplaces"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editWorkplaces"
+        app:layout_constraintTop_toTopOf="@+id/editWorkplaces" />
+
+    <TextView
+        android:id="@+id/editRoles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textSize="12sp"
+        android:textColor="@color/blue"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/roles"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/roles"
+        app:layout_constraintTop_toTopOf="@+id/roles" />
+
+    <TextView
+        android:id="@+id/saveRoles"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:text="Save"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="#00E676"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editRoles"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editRoles"
+        app:layout_constraintTop_toTopOf="@+id/editRoles" />
+
+    <View
+        android:id="@+id/view24"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/shadow_background"
+        app:layout_constraintEnd_toEndOf="@+id/saveChanges"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/saveChanges"
+        app:layout_constraintTop_toTopOf="@+id/saveChanges" />
+    <TextView
+        android:id="@+id/saveChanges"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="Save changes"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="@+id/textView36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintStart_toEndOf="@+id/textView36"
+        app:layout_constraintTop_toTopOf="@+id/textView36" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

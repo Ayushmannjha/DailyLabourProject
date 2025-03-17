@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".userPanel.UploadWork2"
+    android:background="#FF5722">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FDD1C3"
+        tools:layout_editor_absoluteX="-107dp"
+        tools:layout_editor_absoluteY="-28dp">   <!-- Row 1 - Carpenter -->
+
+        <TextView
+            android:id="@+id/electricianText"
+            android:layout_width="281dp"
+            android:layout_height="84dp"
+            android:fontFamily="@font/adlam_displa"
+            android:gravity="center"
+            android:text="Electrician"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.876"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.553" />
+
+
+
+
+        <!-- Row 2 - Plumber -->
+
+        <EditText
+            android:id="@+id/plumberQuantity"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:hint="how many plumber you want"
+            android:inputType="number"
+            android:textColorHint="#000000"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/plumberImage"
+            app:layout_constraintTop_toBottomOf="@+id/plumberText" />
+
+
+        <!-- Row 3 - Electrician -->
+
+        <ImageView
+            android:id="@+id/plumberImage"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:src="@mipmap/plumber"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <EditText
+            android:id="@+id/electricianQuantity"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/black"
+            android:hint="number of electrician you want"
+            android:textColorHint="#000000"
+            android:inputType="number"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/electricianImage"
+            app:layout_constraintTop_toBottomOf="@+id/electricianText" />
+
+
+        <!--row 4  other labour-->
+
+
+        <TextView
+            android:id="@+id/other"
+            android:layout_width="281dp"
+            android:layout_height="84dp"
+            android:fontFamily="@font/adlam_displa"
+            android:gravity="top|center"
+            android:text="Other type of labour"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.576"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.709" />
+
+        <EditText
+            android:id="@+id/otherType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:hint="describe the type"
+            android:inputType="text"
+            android:textSize="20dp"
+            android:visibility="gone"
+            android:textColorHint="#6F6464"
+            app:layout_constraintBottom_toBottomOf="@+id/other"
+            app:layout_constraintEnd_toEndOf="@+id/other"
+            app:layout_constraintHorizontal_bias="0.563"
+            app:layout_constraintStart_toStartOf="@+id/other"
+            app:layout_constraintTop_toTopOf="@+id/other"
+            app:layout_constraintVertical_bias="0.743" />
+
+
+        <EditText
+            android:id="@+id/otherQuantity"
+            android:layout_width="253dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:hint="how many plumber you want"
+            android:textColorHint="#6F6464"
+            android:inputType="number"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otherType" />
+
+        <TextView
+            android:id="@+id/DailyLabourText"
+            android:layout_width="281dp"
+            android:layout_height="84dp"
+            android:fontFamily="@font/adlam_displa"
+            android:gravity="center"
+            android:text="Daily Labour"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.876"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.244" />
+
+        <TextView
+            android:id="@+id/cookText"
+            android:layout_width="281dp"
+            android:layout_height="84dp"
+            android:fontFamily="@font/adlam_displa"
+            android:gravity="center"
+            android:text="Cook"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.876"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.086" />
+
+        <TextView
+            android:id="@+id/plumberText"
+            android:layout_width="281dp"
+            android:layout_height="84dp"
+            android:fontFamily="@font/adlam_displa"
+            android:gravity="center"
+            android:text="Plumber"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.876"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <ImageView
+            android:id="@+id/electricianImage"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:src="@mipmap/electrician"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.088"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.552" />
+
+        <TextView
+            android:id="@+id/finishUpload"
+            android:layout_width="101dp"
+            android:layout_height="49dp"
+            android:background="@drawable/button_background_rounded"
+            android:gravity="center"
+            android:text="finish"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.853" />
+
+        <ImageView
+            android:id="@+id/DailyLabourImage"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:src="@mipmap/daily_labour"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.082"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.244" />
+
+        <EditText
+            android:id="@+id/DailyLabourQuantity"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:hint="number of labour you want"
+            android:textColorHint="#6F6464"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/DailyLabourImage"
+            app:layout_constraintTop_toBottomOf="@+id/DailyLabourText" />
+
+
+        <!--row 5  sweeper-->
+
+
+
+
+        <!--row 6  cook-->
+
+
+        <ImageView
+            android:id="@+id/cookImage"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:src="@drawable/cook"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.088"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.085" />
+
+        <EditText
+            android:id="@+id/cookQuantity"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:hint="number of cook you want"
+            android:textColorHint="#6F6464"
+            android:inputType="number"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/cookImage"
+            app:layout_constraintTop_toBottomOf="@+id/cookText" />
+
+        <EditText
+            android:id="@+id/budget"
+            android:layout_width="236dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="100dp"
+            android:ems="10"
+            android:textColor="@color/black"
+
+            android:hint="Budget, example = 5000"
+            android:inputType="numberDecimal"
+            android:textSize="20dp"
+            android:visibility="gone"
+            android:textColorHint="#6F6464"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/finishUpload" />
+
+        <TextView
+            android:id="@+id/done"
+            android:layout_width="74dp"
+            android:layout_height="37dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="52dp"
+            android:background="@drawable/button_background_rounded"
+            android:gravity="center"
+            android:text="Done"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/otherTypeOk"
+            android:layout_width="74dp"
+            android:layout_height="37dp"
+            android:background="@drawable/button_background_rounded"
+            android:gravity="center"
+            android:text="Ok"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/otherType"
+            app:layout_constraintEnd_toEndOf="@+id/otherType"
+            app:layout_constraintTop_toTopOf="@+id/otherType" />
+
+        <TextView
+            android:id="@+id/rupeeicon"
+            android:layout_width="25dp"
+            android:layout_height="76dp"
+            android:gravity="top|center"
+            android:text="\u20B9"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toBottomOf="@+id/budget"
+            app:layout_constraintEnd_toStartOf="@+id/budget"
+            app:layout_constraintTop_toTopOf="@+id/budget" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/requirements"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:background="#FF5722"
+        android:gravity="center"
+        android:text="Select your requirements "
+
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
