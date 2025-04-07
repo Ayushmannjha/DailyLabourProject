@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/daily_worker
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+    
+server:
+  port: 8070       
+  
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+  jpa:
+    hibernate:
+      ddl-auto: update  # Options: none, validate, update, create, create-drop
+    show-sql: true       # Optional: logs SQL queries in console
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect  # Or appropriate dialect for your DB version

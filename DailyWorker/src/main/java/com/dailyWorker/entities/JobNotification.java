@@ -9,17 +9,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="user_requests")
+@Table(name="job_notifications")
 @Setter
 @Getter
-public class UserRequests {
+public class JobNotification {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
+private String msg;
+private String title;
 
-private int userId;
-private int workerId;
-private double budget;
-private int status;
-private int workId;
 }
