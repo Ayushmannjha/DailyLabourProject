@@ -19,4 +19,5 @@ private int id;
 private int jobNotificationId;
 private int workerId;
 private int isRead;
+private String category;
 }

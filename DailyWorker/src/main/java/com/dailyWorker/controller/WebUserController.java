@@ -19,6 +19,7 @@ import com.dailyWorker.entities.ApplicationStatus;
 import com.dailyWorker.entities.JobNotification;
 import com.dailyWorker.entities.LoginCredential;
 import com.dailyWorker.entities.ReadNotification;
+import com.dailyWorker.entities.ReadNotificationUserReq;
 import com.dailyWorker.entities.UserRequests;
 import com.dailyWorker.entities.WebUser;
 import com.dailyWorker.entities.Workers;
@@ -180,9 +181,13 @@ public ResponseEntity<Object> changeBudget(@RequestParam int workId,@RequestPara
 public ResponseEntity<Object> sendRequest(@RequestBody UserRequests req){
 	try {
 		UserRequests request = wsr.saveUserRequest(req);
+		System.out.println(req);
 		ApplicationStatus apS = wsr.getByWorkerIdAndWorkId( request.getWorkerId(),request.getWorkId());
-		System.out.println(request.getWorkId()+" "+ request.getWorkerId());
-		System.out.println(apS);
+		ReadNotification notiReq = new ReadNotification();
+		notiReq.setIsRead(0);
+		notiReq.setCategory("jobRequest");
+		notiReq.setWorkerId(request.getWorkerId());
+		wsr.saveReadNotification(notiReq);
 		wsr.saveApplicationStatus(apS);
 		return new ResponseEntity<>(request,HttpStatus.OK);
 	} catch (Exception e) {
@@ -286,13 +291,14 @@ try {
 	
 	
 	JobNotification newJob = new JobNotification();
-	newJob.setTitle("New Job Update");
-	newJob.setMsg(work.getCity());
+	newJob.setTitle(work.getCity());
+	newJob.setMsg("New job update");
 	wsr.saveJobNotification(newJob);
 	List<Workers> workers = wsr.getWorkerByCity(work.getCity());
 	for(Workers worker:workers) {
 		ReadNotification readNotification = new ReadNotification();
 		readNotification.setIsRead(0);
+		readNotification.setCategory("jobNotification");
 		readNotification.setJobNotificationId(newJob.getId());
 		readNotification.setWorkerId(worker.getId());
 		wsr.saveReadNotification(readNotification);

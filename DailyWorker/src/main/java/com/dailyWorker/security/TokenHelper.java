@@ -14,6 +14,7 @@ import com.dailyWorker.entities.ApplicationStatus;
 import com.dailyWorker.entities.JobNotification;
 import com.dailyWorker.entities.LoginCredential;
 import com.dailyWorker.entities.ReadNotification;
+import com.dailyWorker.entities.ReadNotificationUserReq;
 import com.dailyWorker.entities.Request;
 import com.dailyWorker.entities.UserRequests;
 import com.dailyWorker.entities.WebUser;
@@ -51,11 +52,12 @@ public class TokenHelper {
 	}
 	
 	
-	public String genrateTokenForNotification(List<JobNotification> jobNotifications, List<Request> requestNotification, List<Integer> userIds,List<ReadNotification> readNotification) {
+	public String genrateTokenForNotification(List<JobNotification> jobNotifications, List<Request> requestNotification, List<Integer> userIds,List<ReadNotification> readNotification,List<UserRequests> requests) {
 		Map<String, Object> claims = new HashMap<>();
 		claims.put("jobNotifications", jobNotifications);
 		claims.put("requestNotification", requestNotification);
 		claims.put("readNotification", readNotification);
+		claims.put("requests", requests);
 		claims.put("userIds", userIds);
 		return doGenerateToken(claims, secret);
 	}

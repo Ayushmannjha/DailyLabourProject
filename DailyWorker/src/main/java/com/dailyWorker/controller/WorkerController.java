@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -37,6 +38,7 @@ import com.dailyWorker.entities.ApplicationStatus;
 import com.dailyWorker.entities.JobNotification;
 import com.dailyWorker.entities.LoginCredential;
 import com.dailyWorker.entities.ReadNotification;
+import com.dailyWorker.entities.ReadNotificationUserReq;
 import com.dailyWorker.entities.Request;
 import com.dailyWorker.entities.Transactions;
 import com.dailyWorker.entities.UserRequests;
@@ -166,9 +168,9 @@ public ResponseEntity<Object> getWorkerNotifications(@RequestParam int workerId)
 	try {
 		
 		if(workerId==-1) {
-			return new ResponseEntity<>("Worker not fount",HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>("Worker not found",HttpStatus.BAD_REQUEST);
 		}
-		
+		List<UserRequests> requests = wsr.getUserRequestByWorkerId(workerId);
 		List<JobNotification> jobUpdates = wsr.getAllJobNotifications();
 		List<JobNotification> jobUpdate = new ArrayList<>();
 		Workers worker = wsr.getById(workerId);
@@ -199,7 +201,12 @@ public ResponseEntity<Object> getWorkerNotifications(@RequestParam int workerId)
 		userIds.add(userId);
 		
 	}
-	String token = tokenHelper.genrateTokenForNotification(jobUpdate, request,userIds,readNotification);
+	System.out.println(jobUpdate+"   "+request);
+	for(UserRequests job:requests) {
+		System.out.println(job.getId());
+	}
+	
+	String token = tokenHelper.genrateTokenForNotification(jobUpdate, request,userIds,readNotification,requests);
 	return new ResponseEntity<>(token, HttpStatus.OK);
 	} catch (Exception e) {
 		// TODO: handle exception
@@ -210,8 +217,70 @@ public ResponseEntity<Object> getWorkerNotifications(@RequestParam int workerId)
 	}
 }
 
+@GetMapping("/get-notification-column-wise")
+public ResponseEntity<Object> notification(@RequestParam int workerId){
+	try {
+		if(workerId==-1) {
+			return new ResponseEntity<>("Worker not found",HttpStatus.BAD_REQUEST);
+		}
+		List<ReadNotificationUserReq> requests = wsr.getReadNotificationUserReqByWorkerId(workerId);
+		int count = 0;
+		for(ReadNotificationUserReq req:requests) {
+			if(req.getIsRead()==0) {
+				count++;
+			}
+		}
+		List<JobNotification> jobUpdates = wsr.getAllJobNotifications();
+		List<JobNotification> jobUpdate = new ArrayList<>();
+		Workers worker = wsr.getById(workerId);
+		List<ReadNotification> readNotification = wsr.getReadNotificationByWorkerId(workerId);
+		String city = worker.getCity();
+		
+		for(JobNotification job:jobUpdates) {
+			if(job.getTitle().equalsIgnoreCase(city)) {
+				jobUpdate.add(job);
+			}
+		}
+	
+		List<Request> request = wsr.getRequestByWorkerId(workerId);
 
+		// Use an iterator to safely remove elements while iterating
+		Iterator<Request> iterator = request.iterator();
+		while (iterator.hasNext()) {
+		    Request req = iterator.next();
+		    if (req.getStatus() != 0) {
+		        iterator.remove(); // Safe way to remove elements while iterating
+		    }
+		}
 
+	List<Integer> userIds = new ArrayList<>();
+	for(Request req:request) {
+		
+		int userId = req.getUserId();
+		userIds.add(userId);
+		
+	}
+		List<ReadNotificationUserReq> readUserReqNotifi = wsr.getReadNotificationUserReqByWorkerId(workerId);
+		
+		List<ReadNotificationUserReq> readUR= new ArrayList<>();
+		for(ReadNotificationUserReq read:readUserReqNotifi) {
+			if(read.getIsRead()==0) {
+				readUR.add(read);
+			}
+		}
+		Map<String,Object> notificationMap = new HashMap<>();
+		notificationMap.put("jobNotification", jobUpdate);
+		notificationMap.put("request", request);
+		notificationMap.put("readUR", readUR);
+		return new ResponseEntity<>(notificationMap,HttpStatus.OK);
+	} catch (Exception e) {
+		// TODO: handle exception
+		log.error("Error occured ",e);
+		e.printStackTrace();
+		return new ResponseEntity<>("Something went wrong",HttpStatus.BAD_GATEWAY);
+	}
+	
+}
 
 
 @GetMapping("/get-work-status")
@@ -302,6 +371,7 @@ public ResponseEntity<Object> getWork(@RequestParam int workerId){
 public ResponseEntity<Object> acceptOrDecline(@RequestParam int workerId, @RequestParam int workId, @RequestParam int status){
 	try {
 		UserRequests ureq = wsr.getUserReqByWorkIdAndWorkerId(workId, workerId);
+		System.out.println("workerId = "+workerId+" workId"+workId);
 		if(status==1) {
 			ApplicationStatus application = wsr.getByWorkerIdAndWorkId(workerId, workId);
 			application.setStatus(status);
