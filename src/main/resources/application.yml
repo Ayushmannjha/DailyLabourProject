@@ -17,7 +17,7 @@ server:
   jpa:
     hibernate:
       ddl-auto: update  # Options: none, validate, update, create, create-drop
-    show-sql: true       # Optional: logs SQL queries in console
+    show-sql: false       # Optional: logs SQL queries in console
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect  # Or appropriate dialect for your DB version

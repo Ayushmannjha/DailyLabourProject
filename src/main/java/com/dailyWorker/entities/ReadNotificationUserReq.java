@@ -9,22 +9,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="user_requests")
+@Table(name = "read_notification_user_req")
 @Setter
 @Getter
-public class UserRequests {
-@Override
-	public String toString() {
-		return "UserRequests [id=" + id + ", userId=" + userId + ", workerId=" + workerId + ", budget=" + budget
-				+ ", status=" + status + ", workId=" + workId + "]";
-	}
+public class ReadNotificationUserReq {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
-
-private int userId;
+private int userReqId;
 private int workerId;
-private double budget;
-private int status;
-private int workId;
+private int isRead;
 }

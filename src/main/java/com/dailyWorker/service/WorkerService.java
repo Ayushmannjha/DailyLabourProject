@@ -11,6 +11,7 @@ import com.dailyWorker.entities.ApplicationStatus;
 import com.dailyWorker.entities.JobNotification;
 import com.dailyWorker.entities.LoginCredential;
 import com.dailyWorker.entities.ReadNotification;
+import com.dailyWorker.entities.ReadNotificationUserReq;
 import com.dailyWorker.entities.Request;
 import com.dailyWorker.entities.Transactions;
 import com.dailyWorker.entities.UserRequests;
@@ -23,6 +24,7 @@ import com.dailyWorker.repo.ApplicationStatusRepo;
 import com.dailyWorker.repo.JobNotificationRepo;
 import com.dailyWorker.repo.LoginCredendialRepo;
 import com.dailyWorker.repo.ReadNotificationRepo;
+import com.dailyWorker.repo.ReadNotificationUserReqRepo;
 import com.dailyWorker.repo.RequestRepo;
 import com.dailyWorker.repo.TransactionRepo;
 import com.dailyWorker.repo.UserRequestsRepo;
@@ -69,6 +71,9 @@ private VerificationRepo vrepo;
 
 @Autowired
 private UserRequestsRepo ureqRepo;
+
+@Autowired
+private ReadNotificationUserReqRepo readNotiUsrReq;
 
 //--------Application status--------//
 
@@ -183,6 +188,15 @@ public Admin getAdminByEmail(String email) {
 }
 
 //-----------Notification settings---------------//
+
+public ReadNotificationUserReq saveReadNotificationUserReq(ReadNotificationUserReq req){
+	return readNotiUsrReq.save(req);
+}
+
+public List<ReadNotificationUserReq> getReadNotificationUserReqByWorkerId(int workerId){
+	return readNotiUsrReq.findByWorkerId(workerId);
+}
+
 public List<JobNotification> getAllJobNotifications(){
 	return jobRepo.findAll();
 }
